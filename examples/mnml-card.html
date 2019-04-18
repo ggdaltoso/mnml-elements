@@ -1,0 +1,96 @@
+<html>
+
+<head>
+  <script type="module" src="../src/mnml-card/mnml-card.js"></script>
+  <script type="module" src="../src/mnml-card-title/mnml-card-title.js"></script>
+  <script type="module" src="../src/mnml-card-content/mnml-card-content.js"></script>
+  <script type="module" src="../src/mnml-card-actions/mnml-card-actions.js"></script>
+  <script type="module" src="../src/mnml-card-image/mnml-card-image.js"></script>
+  <script type="module" src="../src/mnml-button/mnml-button.js"></script>
+
+  <style>
+    .list {
+      width: 340px;
+      margin: 0 auto;
+    }
+
+    mnml-card {
+      display: block;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list">
+    <mnml-card>
+      <mnml-card-title slot="title">What's up</mnml-card-title>
+      <mnml-card-content slot="content">
+        <p>Lorem ipsum blabla.</p>
+        <p>Mimimi lorem ipsum ble foo bar:</p>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+        </ol>
+      </mnml-card-content>
+    </mnml-card>
+
+    <mnml-card>
+      <mnml-card-title slot="title">What's up</mnml-card-title>
+      <mnml-card-content slot="content">
+        <p>Lorem ipsum blabla.</p>
+        <p>Mimimi lorem ipsum ble foo bar:</p>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+        </ol>
+      </mnml-card-content>
+      <mnml-card-actions slot="actions">
+        <mnml-button flat>Cancel</mnml-button>
+        <mnml-button primary>Share</mnml-button>
+      </mnml-actions>
+    </mnml-card>
+
+    <mnml-card>
+      <mnml-card-image slot="image" src="http://www.placepuppy.net/400/300" caption="Lorem ipsum"></mnml-card-image>
+      <mnml-card-content slot="content">
+        <p>Lorem ipsum blabla.</p>
+        <p>Mimimi lorem ipsum ble foo bar:</p>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+        </ol>
+      </mnml-card-content>
+    </mnml-card>
+
+    <mnml-card>
+      <mnml-card-image slot="image" src="http://www.placepuppy.net/400/301" caption="Lorem ipsum"></mnml-card-image>
+      <mnml-card-content slot="content">
+        <p>Lorem ipsum blabla.</p>
+        <p>Mimimi lorem ipsum ble foo bar:</p>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+        </ol>
+      </mnml-card-content>
+    </mnml-card>
+
+    <mnml-card>
+      <mnml-card-title slot="title">What's up</mnml-card-title>
+      <mnml-card-image slot="image" src="http://www.placepuppy.net/400/302" caption="Lorem ipsum"></mnml-card-image>
+    </mnml-card>
+
+    <mnml-card>
+      <mnml-card-image slot="image" src="http://www.placepuppy.net/400/303" caption="Lorem ipsum"></mnml-card-image>
+      <mnml-card-actions slot="actions">
+        <mnml-button flat>Cancel</mnml-button>
+        <mnml-button flat>Share</mnml-button>
+      </mnml-actions>
+    </mnml-card>
+  </div>
+</body>
+</html>

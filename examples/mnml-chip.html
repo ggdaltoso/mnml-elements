@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script type="module" src="../src/mnml-chip/mnml-chip.js"></script>
+  </head>
+  <body>
+    <mnml-chip avatar="http://www.placepuppy.net/64/64" label="Tiny chip"></mnml-chip>
+    <mnml-chip label="Basic chip"></mnml-chip>
+    <mnml-chip avatar="http://www.placepuppy.net/64/65" label="Tiny chip bleeeeee foo bar"></mnml-chip>
+    <mnml-chip id="removableChip" chipid="tiny-chip" label="Tiny chip"></mnml-chip>
+
+    <script>
+      window.removableChip.onRemove = (e, chip) => alert(JSON.stringify(chip))
+    </script>
+  </body>
+</html>

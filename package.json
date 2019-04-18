@@ -1,0 +1,26 @@
+{
+  "name": "@aloureiro/mnml-elements",
+  "version": "0.0.1",
+  "description": "WIP",
+  "main": "lib/mnml-elements.js",
+  "module": "lib/mnml-elements.js",
+  "scripts": {
+    "dev": "polyserve --npm --module-resolution=node",
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "André Loureiro <andreloureiroo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lit-element": "^2.1.0",
+    "lit-html": "^1.0.0"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.8",
+    "polyserve": "^0.27.15",
+    "rollup": "^1.10.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-terser": "^4.0.4"
+  }
+}

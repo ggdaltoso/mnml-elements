@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script type="module" src="../src/mnml-button/mnml-button.js"></script>
+  </head>
+  <body>
+    <mnml-button id="flatBtn" flat>Click</mnml-button>
+    <mnml-button id="primaryBtn" primary>Click</mnml-button>
+    <mnml-button id="btn">Click</mnml-button>
+
+    <script>
+      function makeCb(msg) {
+        return function() {
+          alert(msg);
+        }
+      }
+
+      window.flatBtn.addEventListener('click', makeCb('Flat Button'));
+      window.primaryBtn.addEventListener('click', makeCb('Primary Button'));
+      window.btn.addEventListener('click', makeCb('Simple Button'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script type="module" src="../src/mnml-divider/mnml-divider.js"></script>
+    <script type="module" src="../src/mnml-list/mnml-list.js"></script>
+    <script type="module" src="../src/mnml-list-item/mnml-list-item.js"></script>
+    <script type="module" src="../src/mnml-list-item-text/mnml-list-item-text.js"></script>
+
+    <style>
+      mnml-list {
+        display: block;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <mnml-list>
+      <mnml-list-item>
+        <mnml-list-item-text>Inbox</mnml-list-item-text>
+      </mnml-list-item>
+      <mnml-list-item>
+        <mnml-list-item-text>Drafts</mnml-list-item-text>
+      </mnml-list-item>
+      <mnml-divider></mnml-divider>
+      <mnml-list-item>
+        <mnml-list-item-text>Trash</mnml-list-item-text>
+      </mnml-list-item>
+      <mnml-list-item>
+        <mnml-list-item-text>Spam</mnml-list-item-text>
+      </mnml-list-item>
+    </mnml-list>
+  </body>
+</html>

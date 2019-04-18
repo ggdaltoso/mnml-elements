@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script type="module" src="../src/mnml-dialog/mnml-dialog.js"></script>
+    <script type="module" src="../src/mnml-dialog-title/mnml-dialog-title.js"></script>
+    <script type="module" src="../src/mnml-dialog-content/mnml-dialog-content.js"></script>
+    <script type="module" src="../src/mnml-dialog-actions/mnml-dialog-actions.js"></script>
+    <script type="module" src="../src/mnml-button/mnml-button.js"></script>
+  </head>
+  <body>
+    <mnml-button primary>Open</mnml-button>
+    <mnml-dialog open="true">
+      <mnml-dialog-title label="My Dialog"></mnml-dialog-title>
+      <mnml-dialog-content>
+        <p>Do you really want to discard the draft?</p>
+      </mnml-dialog-content>
+      <mnml-dialog-actions>
+        <mnml-button id="btnCancel">Cancel</mnml-button>
+        <mnml-button id="btnDiscard" primary>Discard</mnml-button>
+      </mnml-dialog-actions>
+    </mnml-dialog>
+
+    <script>
+      const dialog = document.querySelector('mnml-dialog');
+
+      function onConfirm() {
+        console.log('Confirm');
+        dialog.open = false;
+      };
+
+      function onCancel() {
+        console.log('Cancel');
+        dialog.open = false;
+      };
+
+      dialog.onClose = onCancel;
+
+      document
+        .querySelector('#btnCancel')
+        .addEventListener('click', onCancel);
+
+      document
+        .querySelector('#btnDiscard')
+        .addEventListener('click', onConfirm);
+
+      document
+        .querySelector('mnml-button')
+        .addEventListener('click', e => {
+          dialog.open = true;
+        });
+    </script>
+  </body>
+</html>
