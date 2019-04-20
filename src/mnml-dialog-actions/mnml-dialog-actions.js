@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlDialogActions extends Base {
   static get styles() {
@@ -16,9 +16,9 @@ export class MnmlDialogActions extends Base {
         .container mnml-button {
           margin-left: 16x;
         }
-      `
+      `,
     ];
-  };
+  }
 
   constructor() {
     super();
@@ -34,8 +34,8 @@ export class MnmlDialogActions extends Base {
   }
 
   firstUpdated() {
-    this.setAttribute('slot', 'actions');
+    this.setAttribute("slot", "actions");
   }
 }
 
-customElements.define('mnml-dialog-actions', MnmlDialogActions);
+customElements.define("mnml-dialog-actions", MnmlDialogActions);

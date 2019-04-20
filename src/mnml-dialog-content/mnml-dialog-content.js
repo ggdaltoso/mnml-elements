@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlDialogContent extends Base {
   static get styles() {
@@ -11,9 +11,9 @@ export class MnmlDialogContent extends Base {
         .content {
           margin: 16px;
         }
-      `
+      `,
     ];
-  };
+  }
 
   render() {
     return html`
@@ -24,8 +24,8 @@ export class MnmlDialogContent extends Base {
   }
 
   firstUpdated() {
-    this.setAttribute('slot', 'content');
+    this.setAttribute("slot", "content");
   }
 }
 
-customElements.define('mnml-dialog-content', MnmlDialogContent);
+customElements.define("mnml-dialog-content", MnmlDialogContent);

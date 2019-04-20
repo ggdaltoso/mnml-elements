@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlDialogTitle extends Base {
   static get styles() {
@@ -7,7 +7,9 @@ export class MnmlDialogTitle extends Base {
       css`
         :host {
           display: contents;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol";
         }
         .title {
           display: block;
@@ -15,17 +17,17 @@ export class MnmlDialogTitle extends Base {
           font-size: 18px;
           letter-spacing: 1.1px;
         }
-      `
+      `,
     ];
-  };
+  }
 
   static get properties() {
     return {
       label: {
-        type: String
+        type: String,
       },
     };
-  };
+  }
 
   constructor() {
     super();
@@ -39,12 +41,10 @@ export class MnmlDialogTitle extends Base {
   }
 
   firstUpdated() {
-    this.setAttribute('slot', 'title');
+    this.setAttribute("slot", "title");
   }
 
-  handleDimensionChange(dimension, newValue) {
-    
-  }
+  handleDimensionChange(dimension, newValue) {}
 }
 
-customElements.define('mnml-dialog-title', MnmlDialogTitle);
+customElements.define("mnml-dialog-title", MnmlDialogTitle);

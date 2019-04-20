@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlDialog extends Base {
   static get styles() {
@@ -6,7 +6,9 @@ export class MnmlDialog extends Base {
       super.styles,
       css`
         :host {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol";
         }
         .backdrop {
           position: fixed;
@@ -24,39 +26,39 @@ export class MnmlDialog extends Base {
           width: var(--width);
           height: var(--height);
           background-color: white;
-          border: 1px solid #EEE;
+          border: 1px solid #eee;
           border-radius: 4px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           z-index: 2;
         }
-      `
+      `,
     ];
-  };
+  }
 
   static get properties() {
     return {
       open: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       width: {
         type: String,
       },
       height: {
-        type: String
+        type: String,
       },
     };
-  };
+  }
 
   constructor() {
     super();
     this.open = false;
-    this.width = '100px';
-    this.height = '40px';
+    this.width = "100px";
+    this.height = "40px";
   }
-  
+
   attributeChangedCallback(name, oldval, newVal) {
-    if (name === 'width' || name === 'height' && newVal) {
+    if (name === "width" || (name === "height" && newVal)) {
       this.shadowRoot.host.style.setProperty(`--${name}`, newVal);
     }
     super.attributeChangedCallback(name, oldval, newVal);
@@ -79,8 +81,10 @@ export class MnmlDialog extends Base {
       `;
     }
 
-    return html`<div></div>`;
+    return html`
+      <div></div>
+    `;
   }
 }
 
-customElements.define('mnml-dialog', MnmlDialog);
+customElements.define("mnml-dialog", MnmlDialog);

@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlChip extends Base {
   static get styles() {
@@ -15,7 +15,7 @@ export class MnmlChip extends Base {
           padding: 0 8px;
           font-size: 11px;
           line-height: 24px;
-          background: #EEE;
+          background: #eee;
           border-radius: 15px;
         }
         .avatar {
@@ -42,26 +42,26 @@ export class MnmlChip extends Base {
           background-color: rgba(0, 0, 0, 0.1);
           cursor: pointer;
         }
-      `
+      `,
     ];
-  };
+  }
 
   static get properties() {
     return {
       chipId: {
-        type: String
+        type: String,
       },
       label: {
-        type: String
+        type: String,
       },
       avatar: {
-        type: String
+        type: String,
       },
       onRemove: {
-        type: Function
-      }
+        type: Function,
+      },
     };
-  };
+  }
 
   constructor() {
     super();
@@ -74,7 +74,7 @@ export class MnmlChip extends Base {
     return html`
       <img class="avatar" src="${this.avatar}" />
     `;
-  };
+  }
 
   renderRemoveBtn() {
     return html`
@@ -85,7 +85,7 @@ export class MnmlChip extends Base {
   render() {
     const chip = {
       id: this.chipId,
-      label: this.label
+      label: this.label,
     };
 
     return html`
@@ -98,4 +98,4 @@ export class MnmlChip extends Base {
   }
 }
 
-customElements.define('mnml-chip', MnmlChip);
+customElements.define("mnml-chip", MnmlChip);

@@ -1,4 +1,4 @@
-import { Base, html, css, classMap } from '../mnml-base/mnml-base';
+import { Base, html, css, classMap } from "../mnml-base/mnml-base";
 
 export class MnmlButton extends Base {
   static get styles() {
@@ -6,7 +6,9 @@ export class MnmlButton extends Base {
       super.styles,
       css`
         * {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol";
         }
         button {
           padding: 6px 10px;
@@ -19,43 +21,44 @@ export class MnmlButton extends Base {
           background: none;
         }
         .flat:hover {
-          background: #EEE;
+          background: #eee;
         }
         .primary {
           background-color: #333;
-          color: #EEE;
+          color: #eee;
         }
         .primary:hover {
           background-color: #777;
         }
-        .flat, .primary {
+        .flat,
+        .primary {
           transition: 200ms background linear;
         }
-      `
+      `,
     ];
-  };
+  }
 
   static get properties() {
     return {
       flat: {
-        type: Boolean
+        type: Boolean,
       },
       primary: {
-        type: Boolean
-      }
+        type: Boolean,
+      },
     };
-  };
+  }
 
   constructor() {
     super();
     this.flat = false;
     this.primary = false;
-  };
+  }
 
   render() {
     const classes = {
       flat: this.flat,
-      primary: this.primary
+      primary: this.primary,
     };
 
     return html`
@@ -66,4 +69,4 @@ export class MnmlButton extends Base {
   }
 }
 
-customElements.define('mnml-button', MnmlButton);
+customElements.define("mnml-button", MnmlButton);

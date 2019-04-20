@@ -12,7 +12,7 @@ export class MnmlAvatar extends Base {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background-color: #EEE;
+          background-color: #eee;
           overflow: hidden;
         }
         .container img {
@@ -22,28 +22,30 @@ export class MnmlAvatar extends Base {
           font-size: 18px;
           letter-spacing: 1.2px;
         }
-      `
+      `,
     ];
-  };
+  }
 
   static get properties() {
     return {
       src: {
-        type: String
+        type: String,
       },
       fullname: {
-        type: String
-      }
+        type: String,
+      },
     };
-  };
+  }
 
   set fullname(val) {
     const oldVal = this.__name;
     let initials = '';
     const words = val.trim().split(' ');
+
     words.forEach(name => {
       initials += name.charAt(0).toUpperCase();
     });
+
     this.__name = initials;
     this.requestUpdate('fullname', oldVal);
   }
@@ -54,9 +56,10 @@ export class MnmlAvatar extends Base {
 
   constructor() {
     super();
+
     this.src = undefined;
     this.__name = '';
-  };
+  }
 
   render() {
     if (!this.src) {
@@ -65,14 +68,14 @@ export class MnmlAvatar extends Base {
           <span>${this.__name}</span>
         </div>
       `;
-    };
+    }
 
     return html`
       <div class="container">
         <img src="${this.src}" />
       </div>
     `;
-  };
+  }
 }
 
 customElements.define('mnml-avatar', MnmlAvatar);

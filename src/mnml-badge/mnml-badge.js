@@ -18,41 +18,42 @@ export class MnmlBadge extends Base {
           border-radius: 6px;
           font-size: 10px;
           letter-spacing: 0.8px;
-          color: #EEE;
+          color: #eee;
         }
         .dot {
           position: absolute;
-          top: 0;        
+          top: 0;
           right: -8px;
           width: 6px;
           height: 6px;
           border-radius: 50%;
           background-color: #333;
         }
-      `
+      `,
     ];
-  };
+  }
 
   static get properties() {
     return {
       count: {
-        type: Number
+        type: Number,
       },
       dot: {
-        type: Boolean
+        type: Boolean,
       },
       maxcount: {
-        type: Number
-      }
+        type: Number,
+      },
     };
-  };
+  }
 
   constructor() {
     super();
+
     this.count = 0;
     this.maxcount = undefined;
-    this.dot = false
-  };
+    this.dot = false;
+  }
 
   renderDot() {
     return html`
@@ -61,21 +62,23 @@ export class MnmlBadge extends Base {
   }
 
   renderBadge() {
-    const reachedMaxCount = this.maxcount && this.count > this.maxcount ? true : false;
+    const reachedMaxCount =
+      this.maxcount && this.count > this.maxcount ? true : false;
 
     return html`
-      <div class="badge">${reachedMaxCount ? `${this.maxcount}+` : this.count}</div>
+      <div class="badge">
+        ${reachedMaxCount ? `${this.maxcount}+` : this.count}
+      </div>
     `;
   }
 
   render() {
     return html`
       <div class="container">
-        test
-        ${this.dot ? this.renderDot() : this.renderBadge()}
+        test ${this.dot ? this.renderDot() : this.renderBadge()}
       </div>
     `;
-  };
+  }
 }
 
 customElements.define('mnml-badge', MnmlBadge);

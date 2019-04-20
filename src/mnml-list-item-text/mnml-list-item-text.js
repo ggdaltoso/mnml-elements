@@ -1,4 +1,4 @@
-import { Base, css, html } from '../mnml-base/mnml-base';
+import { Base, css, html } from "../mnml-base/mnml-base";
 
 export class MnmlListItemText extends Base {
   static get styles() {
@@ -10,9 +10,9 @@ export class MnmlListItemText extends Base {
           padding: 8px 12px;
           list-style-type: none;
         }
-      `
+      `,
     ];
-  };
+  }
 
   render() {
     return html`
@@ -23,8 +23,8 @@ export class MnmlListItemText extends Base {
   }
 
   firstUpdated() {
-    this.setAttribute('slot', 'text');
+    this.setAttribute("slot", "text");
   }
 }
 
-customElements.define('mnml-list-item-text', MnmlListItemText);
+customElements.define("mnml-list-item-text", MnmlListItemText);

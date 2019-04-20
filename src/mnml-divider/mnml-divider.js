@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlDivider extends Base {
   static get styles() {
@@ -11,7 +11,7 @@ export class MnmlDivider extends Base {
           border: none;
           border-top: 1px solid #777;
         }
-      `
+      `,
     ];
   }
 
@@ -22,4 +22,4 @@ export class MnmlDivider extends Base {
   }
 }
 
-customElements.define('mnml-divider', MnmlDivider);
+customElements.define("mnml-divider", MnmlDivider);

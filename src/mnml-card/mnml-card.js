@@ -1,4 +1,4 @@
-import { Base, html, css } from '../mnml-base/mnml-base';
+import { Base, html, css } from "../mnml-base/mnml-base";
 
 export class MnmlCard extends Base {
   static get styles() {
@@ -6,17 +6,19 @@ export class MnmlCard extends Base {
       super.styles,
       css`
         * {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol";
         }
         .card {
           min-width: 300px;
-          border: 1px solid #EEE;
+          border: 1px solid #eee;
           border-radius: 4px;
           box-shadow: 0 2px 4px rgba(100, 100, 100, 0.1);
         }
-      `
+      `,
     ];
-  };
+  }
 
   render() {
     return html`
@@ -30,4 +32,4 @@ export class MnmlCard extends Base {
   }
 }
 
-customElements.define('mnml-card', MnmlCard);
+customElements.define("mnml-card", MnmlCard);

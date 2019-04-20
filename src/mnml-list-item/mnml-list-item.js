@@ -1,4 +1,4 @@
-import { Base, css, html } from '../mnml-base/mnml-base';
+import { Base, css, html } from "../mnml-base/mnml-base";
 
 export class MnmlListItem extends Base {
   static get styles() {
@@ -11,9 +11,9 @@ export class MnmlListItem extends Base {
           padding: 0;
           list-style-type: none;
         }
-      `
+      `,
     ];
-  };
+  }
 
   render() {
     return html`
@@ -25,4 +25,4 @@ export class MnmlListItem extends Base {
   }
 }
 
-customElements.define('mnml-list-item', MnmlListItem);
+customElements.define("mnml-list-item", MnmlListItem);
