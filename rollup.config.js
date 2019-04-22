@@ -1,11 +1,10 @@
 import resolve from 'rollup-plugin-node-resolve';
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 
 const outFolder = 'lib';
 
 function onwarn(warning) {
-  if (warning.code === 'THIS_IS_UNDEFINED')
-    return;
+  if (warning.code === 'THIS_IS_UNDEFINED') return;
   console.error(warning.message);
 }
 
@@ -29,16 +28,14 @@ export default [
       'src/mnml-divider/mnml-divider.js',
       'src/mnml-list/mnml-list.js',
       'src/mnml-list-item/mnml-list-item.js',
-      'src/mnml-list-item-text/mnml-list-item-text.js'
+      'src/mnml-list-item-text/mnml-list-item-text.js',
+      'src/mnml-masonry/mnml-masonry.js',
     ],
     output: {
       dir: outFolder,
       format: 'es',
     },
     onwarn,
-    plugins: [
-      resolve(),
-      terser()
-    ]
-  }
+    plugins: [resolve(), terser()],
+  },
 ];
