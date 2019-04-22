@@ -2,12 +2,13 @@ import { Base, css, html } from '../mnml-base/mnml-base';
 
 export class MnmlMasonry extends Base {
   static get properties() {
-    return { columns: { type: Number } };
+    return { columns: { type: Number }, height: { type: Number } };
   }
 
   constructor() {
     super();
     this.columns = 3;
+    this.height = 800;
   }
 
   static get styles() {
@@ -18,23 +19,48 @@ export class MnmlMasonry extends Base {
           display: flex;
           flex-flow: column wrap;
           align-content: space-between;
-          height: 800px;
         }
 
-        :host::before,
-        :host::after {
+        .line-breaker {
           content: '';
           flex-basis: 100%;
           width: 0;
-          order: 2;
+          margin: 0;
         }
+      `,
+    ];
+  }
 
-        ::slotted(*) {
-          width: 32%;
-          margin-bottom: 2%;
-        }
+  get rules() {
+    let rules = `
+    :host {
+      height: ${this.height}px;
+    }
+    ::slotted(*) {
+      width: calc(94% / ${this.columns});
+      margin-bottom: 2%;
+    }`;
 
-        ::slotted(*:nth-child(3n + 1)) {
+    for (let i = 1; i < this.columns; ) {
+      rules += `
+      ::slotted(*:nth-child(${this.columns}n + ${i})) {
+        order: ${i++};
+      }`;
+    }
+
+    rules += `
+    ::slotted(*:nth-child(${this.columns}n)) {
+      order: ${this.columns};
+    }`;
+
+    console.log(rules);
+    return rules;
+  }
+
+  render() {
+    return html`
+      <style>
+        ${this.rules} ::slotted(*:nth-child(3n + 1)) {
           order: 1;
         }
         ::slotted(*:nth-child(3n + 2)) {
@@ -43,13 +69,8 @@ export class MnmlMasonry extends Base {
         ::slotted(*:nth-child(3n)) {
           order: 3;
         }
-      `,
-    ];
-  }
-
-  render() {
-    return html`
-      <slot></slot>
+      </style>
+      <slot> </slot>
     `;
   }
 }
